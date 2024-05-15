@@ -14,6 +14,10 @@
 		91B5AE702BF4FB110029819A /* learningSwiftUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91B5AE6F2BF4FB110029819A /* learningSwiftUITests.swift */; };
 		91B5AE7A2BF4FB110029819A /* learningSwiftUIUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91B5AE792BF4FB110029819A /* learningSwiftUIUITests.swift */; };
 		91B5AE7C2BF4FB110029819A /* learningSwiftUIUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91B5AE7B2BF4FB110029819A /* learningSwiftUIUITestsLaunchTests.swift */; };
+		91B5AE8B2BF4FB9E0029819A /* netflixSplash.json in Resources */ = {isa = PBXBuildFile; fileRef = 91B5AE8A2BF4FB9E0029819A /* netflixSplash.json */; };
+		91B5AE8F2BF4FD720029819A /* SplashScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91B5AE8E2BF4FD720029819A /* SplashScreen.swift */; };
+		91B5AE912BF4FEEC0029819A /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = 91B5AE902BF4FEEC0029819A /* Lottie */; };
+		91B5AE942BF52DD60029819A /* AppData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91B5AE932BF52DD60029819A /* AppData.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,6 +49,9 @@
 		91B5AE752BF4FB110029819A /* learningSwiftUIUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = learningSwiftUIUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		91B5AE792BF4FB110029819A /* learningSwiftUIUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = learningSwiftUIUITests.swift; sourceTree = "<group>"; };
 		91B5AE7B2BF4FB110029819A /* learningSwiftUIUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = learningSwiftUIUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		91B5AE8A2BF4FB9E0029819A /* netflixSplash.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = netflixSplash.json; sourceTree = "<group>"; };
+		91B5AE8E2BF4FD720029819A /* SplashScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreen.swift; sourceTree = "<group>"; };
+		91B5AE932BF52DD60029819A /* AppData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,6 +59,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				91B5AE912BF4FEEC0029819A /* Lottie in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -95,6 +103,9 @@
 		91B5AE5C2BF4FB100029819A /* learningSwiftUI */ = {
 			isa = PBXGroup;
 			children = (
+				91B5AE922BF52DCC0029819A /* ViewModel */,
+				91B5AE8D2BF4FD650029819A /* View */,
+				91B5AE882BF4FB8B0029819A /* Resources */,
 				91B5AE5D2BF4FB100029819A /* learningSwiftUIApp.swift */,
 				91B5AE5F2BF4FB100029819A /* ContentView.swift */,
 				91B5AE612BF4FB110029819A /* Assets.xcassets */,
@@ -129,6 +140,38 @@
 			path = learningSwiftUIUITests;
 			sourceTree = "<group>";
 		};
+		91B5AE882BF4FB8B0029819A /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				91B5AE892BF4FB920029819A /* Logos */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		91B5AE892BF4FB920029819A /* Logos */ = {
+			isa = PBXGroup;
+			children = (
+				91B5AE8A2BF4FB9E0029819A /* netflixSplash.json */,
+			);
+			path = Logos;
+			sourceTree = "<group>";
+		};
+		91B5AE8D2BF4FD650029819A /* View */ = {
+			isa = PBXGroup;
+			children = (
+				91B5AE8E2BF4FD720029819A /* SplashScreen.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		91B5AE922BF52DCC0029819A /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				91B5AE932BF52DD60029819A /* AppData.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -145,6 +188,9 @@
 			dependencies = (
 			);
 			name = learningSwiftUI;
+			packageProductDependencies = (
+				91B5AE902BF4FEEC0029819A /* Lottie */,
+			);
 			productName = learningSwiftUI;
 			productReference = 91B5AE5A2BF4FB100029819A /* learningSwiftUI.app */;
 			productType = "com.apple.product-type.application";
@@ -217,6 +263,9 @@
 				Base,
 			);
 			mainGroup = 91B5AE512BF4FB100029819A;
+			packageReferences = (
+				91B5AE8C2BF4FBB60029819A /* XCRemoteSwiftPackageReference "lottie-ios" */,
+			);
 			productRefGroup = 91B5AE5B2BF4FB100029819A /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -234,6 +283,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				91B5AE662BF4FB110029819A /* Preview Assets.xcassets in Resources */,
+				91B5AE8B2BF4FB9E0029819A /* netflixSplash.json in Resources */,
 				91B5AE622BF4FB110029819A /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -259,8 +309,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				91B5AE8F2BF4FD720029819A /* SplashScreen.swift in Sources */,
 				91B5AE602BF4FB100029819A /* ContentView.swift in Sources */,
 				91B5AE5E2BF4FB100029819A /* learningSwiftUIApp.swift in Sources */,
+				91B5AE942BF52DD60029819A /* AppData.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -617,6 +669,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		91B5AE8C2BF4FBB60029819A /* XCRemoteSwiftPackageReference "lottie-ios" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/airbnb/lottie-ios";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.4.3;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		91B5AE902BF4FEEC0029819A /* Lottie */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 91B5AE8C2BF4FBB60029819A /* XCRemoteSwiftPackageReference "lottie-ios" */;
+			productName = Lottie;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 91B5AE522BF4FB100029819A /* Project object */;
 }

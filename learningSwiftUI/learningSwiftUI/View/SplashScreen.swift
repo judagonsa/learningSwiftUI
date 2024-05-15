@@ -6,13 +6,43 @@
 //
 
 import SwiftUI
+import Lottie
 
 struct SplashScreen: View {
+    @Environment(AppData.self) private var appData
+    @State private var progress: CGFloat = 0.0
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        Rectangle()
+            .fill(.black)
+            .overlay {
+                if let jsonUrl {
+                    LottieView {
+                        await LottieAnimation.loadedFrom(url: jsonUrl)
+                    }
+                    .playing(.fromProgress(0, toProgress: progress, loopMode: .playOnce))
+                    .animationDidFinish{ completed in
+                        appData.isSplashFinish = progress != 0 && completed
+                    }
+                    .frame(width: 600, height: 400)
+                    .task {
+                        try? await Task.sleep(for: .seconds(0.15))
+                        progress = 0.8
+                    }
+                }
+            }
+            .ignoresSafeArea()
+    }
+    
+    private var jsonUrl: URL? {
+        if let bundlePath = Bundle.main.path(forResource: "netflixSplash", ofType: "json") {
+            return URL(filePath: bundlePath)
+        }
+        return nil
     }
 }
 
 #Preview {
-    SplashScreen()
+    ContentView()
+        .preferredColorScheme(.dark)
 }

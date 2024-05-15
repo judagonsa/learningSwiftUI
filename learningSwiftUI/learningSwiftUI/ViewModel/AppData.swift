@@ -7,12 +7,7 @@
 
 import SwiftUI
 
-struct AppData: View {
-    var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
-    }
-}
-
-#Preview {
-    AppData()
+@Observable
+class AppData {
+    var isSplashFinish = false
 }
