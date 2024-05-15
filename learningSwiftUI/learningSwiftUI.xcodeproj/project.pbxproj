@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		91B054072BF5426E00736BF5 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91B054062BF5426E00736BF5 /* HomeView.swift */; };
+		91B0540B2BF5430300736BF5 /* CustomTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91B0540A2BF5430300736BF5 /* CustomTabBar.swift */; };
+		91B0540D2BF5432900736BF5 /* Tab.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91B0540C2BF5432900736BF5 /* Tab.swift */; };
 		91B5AE5E2BF4FB100029819A /* learningSwiftUIApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91B5AE5D2BF4FB100029819A /* learningSwiftUIApp.swift */; };
 		91B5AE602BF4FB100029819A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91B5AE5F2BF4FB100029819A /* ContentView.swift */; };
 		91B5AE622BF4FB110029819A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 91B5AE612BF4FB110029819A /* Assets.xcassets */; };
@@ -38,6 +41,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		91B054062BF5426E00736BF5 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		91B0540A2BF5430300736BF5 /* CustomTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBar.swift; sourceTree = "<group>"; };
+		91B0540C2BF5432900736BF5 /* Tab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tab.swift; sourceTree = "<group>"; };
 		91B5AE5A2BF4FB100029819A /* learningSwiftUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = learningSwiftUI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		91B5AE5D2BF4FB100029819A /* learningSwiftUIApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = learningSwiftUIApp.swift; sourceTree = "<group>"; };
 		91B5AE5F2BF4FB100029819A /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -80,6 +86,31 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		91B054052BF5425E00736BF5 /* HomeView */ = {
+			isa = PBXGroup;
+			children = (
+				91B054092BF5427B00736BF5 /* ViewModel */,
+				91B054082BF5427600736BF5 /* View */,
+			);
+			path = HomeView;
+			sourceTree = "<group>";
+		};
+		91B054082BF5427600736BF5 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				91B054062BF5426E00736BF5 /* HomeView.swift */,
+				91B0540A2BF5430300736BF5 /* CustomTabBar.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		91B054092BF5427B00736BF5 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 		91B5AE512BF4FB100029819A = {
 			isa = PBXGroup;
 			children = (
@@ -103,8 +134,9 @@
 		91B5AE5C2BF4FB100029819A /* learningSwiftUI */ = {
 			isa = PBXGroup;
 			children = (
-				91B5AE922BF52DCC0029819A /* ViewModel */,
-				91B5AE8D2BF4FD650029819A /* View */,
+				91B054052BF5425E00736BF5 /* HomeView */,
+				91B5AE922BF52DCC0029819A /* Model */,
+				91B5AE8D2BF4FD650029819A /* SplashScreen */,
 				91B5AE882BF4FB8B0029819A /* Resources */,
 				91B5AE5D2BF4FB100029819A /* learningSwiftUIApp.swift */,
 				91B5AE5F2BF4FB100029819A /* ContentView.swift */,
@@ -156,20 +188,21 @@
 			path = Logos;
 			sourceTree = "<group>";
 		};
-		91B5AE8D2BF4FD650029819A /* View */ = {
+		91B5AE8D2BF4FD650029819A /* SplashScreen */ = {
 			isa = PBXGroup;
 			children = (
 				91B5AE8E2BF4FD720029819A /* SplashScreen.swift */,
 			);
-			path = View;
+			path = SplashScreen;
 			sourceTree = "<group>";
 		};
-		91B5AE922BF52DCC0029819A /* ViewModel */ = {
+		91B5AE922BF52DCC0029819A /* Model */ = {
 			isa = PBXGroup;
 			children = (
 				91B5AE932BF52DD60029819A /* AppData.swift */,
+				91B0540C2BF5432900736BF5 /* Tab.swift */,
 			);
-			path = ViewModel;
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -312,7 +345,10 @@
 				91B5AE8F2BF4FD720029819A /* SplashScreen.swift in Sources */,
 				91B5AE602BF4FB100029819A /* ContentView.swift in Sources */,
 				91B5AE5E2BF4FB100029819A /* learningSwiftUIApp.swift in Sources */,
+				91B054072BF5426E00736BF5 /* HomeView.swift in Sources */,
+				91B0540B2BF5430300736BF5 /* CustomTabBar.swift in Sources */,
 				91B5AE942BF52DD60029819A /* AppData.swift in Sources */,
+				91B0540D2BF5432900736BF5 /* Tab.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

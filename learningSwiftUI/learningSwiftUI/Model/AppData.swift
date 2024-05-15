@@ -9,5 +9,6 @@ import SwiftUI
 
 @Observable
 class AppData {
-    var isSplashFinish = false
+    var isSplashFinish: Bool = false
+    var activeTab: Tab = .home
 }
