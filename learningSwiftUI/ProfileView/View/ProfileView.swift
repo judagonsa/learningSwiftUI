@@ -25,9 +25,7 @@ struct ProfileView: View {
             VStack {
                 
                 Text("Perfil")
-                    .font(.system(.largeTitle, design: .rounded))
-                    .bold()
-                    .padding(.vertical, 20)
+                    .titleView()
                 
                 FormTextFfield(nameField: "Nombre", valueField: $name)
                 RequirementText(requirementText: "Mínimo 6 caracteres")
@@ -61,16 +59,8 @@ struct ProfileView: View {
                     visibleErrors.toggle()
                 } label: {
                     Text("Guardar")
-                        .font((.system(.title3, design: .rounded)))
-                        .bold()
-                        .foregroundStyle(.white)
                 }
-                .frame(maxWidth: .infinity)
-                .frame(height: 50)
-                .background(Color("primaryRed"))
-                .clipShape(RoundedRectangle(cornerRadius: 10))
-                .padding(.top, 30)
-                .padding()
+                .buttonFooter(color: Color("primaryRed"))
                 
             }
         }
@@ -90,31 +80,22 @@ struct FormTextFfield: View {
             if isSecure {
                 
             }else if isEmail {
+                
                 TextField(nameField, text: $valueField)
-                    .font(.system(size: 18, weight: .light, design: .rounded))
+                    .textFormulary()
                     .keyboardType(.emailAddress)
-                    .padding(10)
-                    .overlay {
-                        RoundedRectangle(cornerRadius: 10)
-                            .stroke(Color.gray, lineWidth: 0.5)
-                    }
+                
             }else if isNumber{
+                
                 TextField(nameField, text: $valueField)
-                    .font(.system(size: 18, weight: .light, design: .rounded))
+                    .textFormulary()
                     .keyboardType(.numberPad)
-                    .padding(10)
-                    .overlay {
-                        RoundedRectangle(cornerRadius: 10)
-                            .stroke(Color.gray, lineWidth: 0.5)
-                    }
+                
             } else {
+                
                 TextField(nameField, text: $valueField)
-                    .font(.system(size: 18, weight: .light, design: .rounded))
-                    .padding(10)
-                    .overlay {
-                        RoundedRectangle(cornerRadius: 10)
-                            .stroke(Color.gray, lineWidth: 0.5)
-                    }
+                    .textFormulary()
+                
             }
         }
         .padding(.horizontal)
@@ -138,12 +119,14 @@ struct RequirementText: View {
             
             Text(requirementText)
                 .foregroundStyle(.secondary)
-                .font(.system(.body, design: .rounded))
+                .font(.system(.footnote, design: .rounded))
                 .strikethrough(isVerified)
             
             Spacer()
         }
         .padding(.horizontal)
+        .padding(.bottom, 5)
+        .padding(.top, -5)
     }
 }
 
