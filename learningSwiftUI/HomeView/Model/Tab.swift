@@ -22,4 +22,8 @@ enum Tab: String, CaseIterable {
             return "person.crop.circle"
         }
     }
+    
+    var indexTab: Int {
+        return Tab.allCases.firstIndex(of: self) ?? 0
+    }
 }

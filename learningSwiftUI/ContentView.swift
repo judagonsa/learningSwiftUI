@@ -13,6 +13,7 @@ struct ContentView: View {
         ZStack {
             
             HomeView()
+                .environment(AppData())
             
             if !appData.isSplashFinish {
                 SplashScreen()
@@ -26,4 +27,5 @@ struct ContentView: View {
 #Preview {
     ContentView()
         .preferredColorScheme(.dark)
+        
 }

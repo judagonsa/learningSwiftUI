@@ -8,33 +8,21 @@
 import SwiftUI
 
 struct CustomTabBar: View {
-    @Environment(AppData.self) private var appData
+    
+    @Binding var activeTab: Tab
+    
     var body: some View {
         HStack {
             ForEach(Tab.allCases, id:\.rawValue){ tab in
                 Button {
-                    appData.activeTab = tab
-                } label: {
-                    VStack(spacing: 2) {
-                        Image(
-                            systemName: appData.activeTab == tab
-                            ? "\(tab.icon).fill"
-                            : tab.icon
-                        )
-                        .font(.title3)
-                        .frame(width: 35, height: 35)
-                        
-                        Text(tab.rawValue)
-                            .font(.caption2)
-                    }
-                    .frame(maxWidth: .infinity)
-                    .foregroundColor(.red)
-                    .opacity(appData.activeTab == tab ? 1 : 0.8)
+                    activeTab = tab
+                }label: {
+                    TabItem(tint: Color("primaryRed"), inactiveTint: .gray, tab: tab, activeTab: $activeTab)
                 }
             }
         }
         .padding(.bottom, 10)
-        .padding(.top, 5)
+        .padding(.top, 6)
         .background {
             Rectangle()
                 .fill(.ultraThinMaterial)
@@ -45,7 +33,7 @@ struct CustomTabBar: View {
 }
 
 #Preview {
-    HomeView()
+    CustomTabBar(activeTab: .constant(.home))
         .environment(AppData())
         .preferredColorScheme(.dark)
 }

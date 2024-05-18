@@ -8,15 +8,34 @@
 import SwiftUI
 
 struct HomeView: View {
+    
+    @Environment(AppData.self) private var appData
+    @Bindable var appDataBindable: AppData = .init()
+    
     var body: some View {
-        VStack {
-            Spacer(minLength: 0)
+        TabView(selection: $appDataBindable.activeTab){
             
-            CustomTabBar()
+            Text("Home").tabItem {
+                Text("Home")
+            }.tag(Tab.home)
+            
+            Text("Cosas locas").tabItem {
+                Text("Other")
+            }.tag(Tab.new)
+            
+            ProfileView().tabItem {
+                Text("profile")
+            }.tag(Tab.profile)
+        }
+        .overlay(alignment: .bottom) {
+            CustomTabBar(activeTab: $appDataBindable.activeTab)
         }
     }
 }
 
 #Preview {
     HomeView()
+        .environment(AppData())
 }
+
+//
