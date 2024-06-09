@@ -11,16 +11,25 @@ struct ProfileView: View {
     
     @State private var name = ""
     @State private var isValidName = true
+    
     @State private var lastName = ""
     @State private var isValidLastName = true
+    
     @State private var email = ""
     @State private var isValidNEmail = true
+    
     @State private var typeDocument = ""
     @State private var isValidTypeDocument = true
+    
     @State private var numberDocument = ""
     @State private var isValidNumberDocument = true
+    
+    @State private var birthDate: Date?
+    @State private var isValidBirthDate = true
+    
     @State private var numberPhone = ""
     @State private var isValidNumberPhone = true
+    
     @State private var gender = ""
     @State private var isValidGender = true
     
@@ -34,12 +43,12 @@ struct ProfileView: View {
                 
                 FormTextFfield(nameField: "Nombre", valueField: $name)
                 if !isValidName {
-                    RequirementText(requirementText: "Mínimo 6 caracteres")
+                    RequirementText(requirementText: "Mínimo 3 caracteres")
                 }
                 
                 FormTextFfield(nameField: "Apellido", valueField: $lastName)
                 if !isValidLastName {
-                    RequirementText(requirementText: "Mínimo 6 caracteres")
+                    RequirementText(requirementText: "Mínimo 3 caracteres")
                 }
                 
                 FormTextFfield(nameField: "Correo", valueField: $email, isEmail: true)
@@ -55,6 +64,11 @@ struct ProfileView: View {
                 FormTextFfield(nameField: "Número de documento", valueField: $numberDocument)
                 if !isValidNumberDocument {
                     RequirementText(iconName: "candybarphone", requirementText: "Documento inválido")
+                }
+                
+                DatePickerHelper(placeHolder: "BirthDate", date: $birthDate)
+                if !isValidBirthDate {
+                    RequirementText(iconName: "candybarphone", requirementText: "favor selecciona la fecha de nacimiento")
                 }
                 
                 //seleccionar país (indicativo)
@@ -88,6 +102,17 @@ struct ProfileView: View {
     }
     
     func validateInformation() -> Bool {
+        var isValidateInformation =  false
+        
+        isValidName = name.count > 3
+        isValidLastName = lastName.count > 3
+        //TODO: validar correo (video tutorial)
+        //TODO: tipo de documento
+        //TODO: fecha de nacimiento mayor a 12 años
+        isValidNumberDocument = numberDocument.count > 9
+        isValidNumberPhone = numberPhone.count == 10
+        //TODO: seleccionar género
+        
         return false
     }
 }
@@ -98,12 +123,12 @@ struct FormTextFfield: View {
     var isSecure = false
     var isEmail = false
     var isNumber = false
-    var isSelected = false
+    var isBirtDate = false
     
     var body: some View {
         VStack {
             if isSecure {
-                
+                //TODO: Contraseña segura
             }else if isEmail {
                 
                 TextField(nameField, text: $valueField)
@@ -116,7 +141,10 @@ struct FormTextFfield: View {
                     .textFormulary()
                     .keyboardType(.numberPad)
                 
-            } else {
+            }else if isBirtDate {
+                
+                
+            }else {
                 
                 TextField(nameField, text: $valueField)
                     .textFormulary()

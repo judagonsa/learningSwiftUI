@@ -24,6 +24,7 @@
 		91BC02AE2BF5861E00C2AA4D /* SplashScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91BC02A72BF5861E00C2AA4D /* SplashScreen.swift */; };
 		91BC02AF2BF5861E00C2AA4D /* netflixSplash.json in Resources */ = {isa = PBXBuildFile; fileRef = 91BC02A92BF5861E00C2AA4D /* netflixSplash.json */; };
 		91BC02B22BF5863D00C2AA4D /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = 91BC02B12BF5863D00C2AA4D /* Lottie */; };
+		91EA2E592C164A00001FA46B /* DatePickerHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91EA2E582C164A00001FA46B /* DatePickerHelper.swift */; };
 		91F288F62BF65A6000EF74B2 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91F288F52BF65A6000EF74B2 /* ProfileView.swift */; };
 		91F288F92BF65B5F00EF74B2 /* TextfieldHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91F288F82BF65B5F00EF74B2 /* TextfieldHelper.swift */; };
 /* End PBXBuildFile section */
@@ -66,6 +67,7 @@
 		91BC02A52BF5861E00C2AA4D /* Tab.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tab.swift; sourceTree = "<group>"; };
 		91BC02A72BF5861E00C2AA4D /* SplashScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SplashScreen.swift; sourceTree = "<group>"; };
 		91BC02A92BF5861E00C2AA4D /* netflixSplash.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = netflixSplash.json; sourceTree = "<group>"; };
+		91EA2E582C164A00001FA46B /* DatePickerHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatePickerHelper.swift; sourceTree = "<group>"; };
 		91F288F52BF65A6000EF74B2 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		91F288F82BF65B5F00EF74B2 /* TextfieldHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextfieldHelper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -248,6 +250,7 @@
 				91F288F82BF65B5F00EF74B2 /* TextfieldHelper.swift */,
 				917724D22BF9734A008BBE8B /* TextHelper.swift */,
 				917724D42BF97598008BBE8B /* ButtonHelper.swift */,
+				91EA2E582C164A00001FA46B /* DatePickerHelper.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -392,6 +395,7 @@
 				91BC02752BF585AD00C2AA4D /* ContentView.swift in Sources */,
 				917724D32BF9734A008BBE8B /* TextHelper.swift in Sources */,
 				91F288F62BF65A6000EF74B2 /* ProfileView.swift in Sources */,
+				91EA2E592C164A00001FA46B /* DatePickerHelper.swift in Sources */,
 				91BC02A32BF5860C00C2AA4D /* HomeView.swift in Sources */,
 				91BC02AE2BF5861E00C2AA4D /* SplashScreen.swift in Sources */,
 				917724D52BF97598008BBE8B /* ButtonHelper.swift in Sources */,
