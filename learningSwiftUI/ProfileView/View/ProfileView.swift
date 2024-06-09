@@ -10,14 +10,19 @@ import SwiftUI
 struct ProfileView: View {
     
     @State private var name = ""
+    @State private var isValidName = true
     @State private var lastName = ""
+    @State private var isValidLastName = true
     @State private var email = ""
+    @State private var isValidNEmail = true
     @State private var typeDocument = ""
+    @State private var isValidTypeDocument = true
     @State private var numberDocument = ""
+    @State private var isValidNumberDocument = true
     @State private var numberPhone = ""
+    @State private var isValidNumberPhone = true
     @State private var gender = ""
-    
-    @State var visibleErrors = false
+    @State private var isValidGender = true
     
     var body: some View {
         
@@ -28,35 +33,51 @@ struct ProfileView: View {
                     .titleView()
                 
                 FormTextFfield(nameField: "Nombre", valueField: $name)
-                RequirementText(requirementText: "Mínimo 6 caracteres")
+                if !isValidName {
+                    RequirementText(requirementText: "Mínimo 6 caracteres")
+                }
                 
                 FormTextFfield(nameField: "Apellido", valueField: $lastName)
-                RequirementText(requirementText: "Mínimo 6 caracteres")
+                if !isValidLastName {
+                    RequirementText(requirementText: "Mínimo 6 caracteres")
+                }
                 
                 FormTextFfield(nameField: "Correo", valueField: $email, isEmail: true)
-                RequirementText(iconName: "mail.fill", requirementText: "Mínimo 6 caracteres, una mayúscula y un número")
+                if !isValidNEmail {
+                    RequirementText(iconName: "mail.fill", requirementText: "Mínimo 6 caracteres, una mayúscula y un número")
+                }
                 
                 FormTextFfield(nameField: "Tipo de documento", valueField: $typeDocument) //seleccionable
-                RequirementText(iconName: "filemenu.and.selection", requirementText: "Debes seleccionar el tipo de documento")
+                if !isValidTypeDocument {
+                    RequirementText(iconName: "filemenu.and.selection", requirementText: "Debes seleccionar el tipo de documento")
+                }
                 
                 FormTextFfield(nameField: "Número de documento", valueField: $numberDocument)
-                RequirementText(iconName: "candybarphone", requirementText: "Documento inválido")
+                if !isValidNumberDocument {
+                    RequirementText(iconName: "candybarphone", requirementText: "Documento inválido")
+                }
                 
                 //seleccionar país (indicativo)
                 FormTextFfield(nameField: "Número de teléfono", valueField: $numberPhone)
-                RequirementText(iconName: "candybarphone", requirementText: "Número teléfonico inválido")
+                if !isValidNumberPhone {
+                    RequirementText(iconName: "candybarphone", requirementText: "Número teléfonico inválido")
+                }
                 
                 FormTextFfield(nameField: "Género", valueField: $gender) //seleccionable
-                RequirementText(iconName: "filemenu.and.selection", requirementText: "Debes seleccionar el género")
+                if !isValidGender {
+                    RequirementText(iconName: "filemenu.and.selection", requirementText: "Debes seleccionar el género")
+                }
                 
                 //vista de cambiar contraseña
                 
                 
                 Spacer()
                 Button {
-                    print("Guardar inf")
-                    //validar información
-                    visibleErrors.toggle()
+                    if validateInformation() {
+                        print("Guardar inf")
+                    }else {
+                        print("Algo anda mal")
+                    }
                 } label: {
                     Text("Guardar")
                 }
@@ -64,6 +85,10 @@ struct ProfileView: View {
                 
             }
         }
+    }
+    
+    func validateInformation() -> Bool {
+        return false
     }
 }
 
