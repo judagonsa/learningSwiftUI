@@ -19,6 +19,7 @@ struct ProfileView: View {
     @State private var isValidNEmail = true
     
     @State private var typeDocument = ""
+    @State private var typeDocumentEnum: TypeDocument?
     @State private var isValidTypeDocument = true
     
     @State private var numberDocument = ""
@@ -30,7 +31,8 @@ struct ProfileView: View {
     @State private var numberPhone = ""
     @State private var isValidNumberPhone = true
     
-    @State private var gender = ""
+    @State private var typeGender = ""
+    @State private var typeGenderEnum: TypeGender?
     @State private var isValidGender = true
     
     var body: some View {
@@ -56,7 +58,19 @@ struct ProfileView: View {
                     RequirementText(iconName: "mail.fill", requirementText: "Mínimo 6 caracteres, una mayúscula y un número")
                 }
                 
-                FormTextFfield(nameField: "Tipo de documento", valueField: $typeDocument) //seleccionable
+                Menu {
+                    Text("Tipo de documento")
+                    Divider()
+                    ForEach(TypeDocument.allCases) { document in
+                        Button(document.name) {
+                            typeDocumentEnum = document
+                            typeDocument = document.name
+                        }
+                    }
+                } label: {
+                    FormTextFfield(nameField: "Tipo de documento", valueField: $typeDocument) //seleccionable
+                }
+
                 if !isValidTypeDocument {
                     RequirementText(iconName: "filemenu.and.selection", requirementText: "Debes seleccionar el tipo de documento")
                 }
@@ -67,6 +81,7 @@ struct ProfileView: View {
                 }
                 
                 DatePickerHelper(placeHolder: "BirthDate", date: $birthDate)
+                    .textFormulary()
                 if !isValidBirthDate {
                     RequirementText(iconName: "candybarphone", requirementText: "favor selecciona la fecha de nacimiento")
                 }
@@ -76,8 +91,18 @@ struct ProfileView: View {
                 if !isValidNumberPhone {
                     RequirementText(iconName: "candybarphone", requirementText: "Número teléfonico inválido")
                 }
-                
-                FormTextFfield(nameField: "Género", valueField: $gender) //seleccionable
+                Menu {
+                    Text("Género")
+                    Divider()
+                    ForEach(TypeGender.allCases) { gender in
+                        Button(gender.name) {
+                            typeGender = gender.name
+                            typeGenderEnum = gender
+                        }
+                    }
+                } label: {
+                    FormTextFfield(nameField: "Género", valueField: $typeGender) //seleccionable
+                }
                 if !isValidGender {
                     RequirementText(iconName: "filemenu.and.selection", requirementText: "Debes seleccionar el género")
                 }
@@ -123,7 +148,6 @@ struct FormTextFfield: View {
     var isSecure = false
     var isEmail = false
     var isNumber = false
-    var isBirtDate = false
     
     var body: some View {
         VStack {
@@ -141,9 +165,6 @@ struct FormTextFfield: View {
                     .textFormulary()
                     .keyboardType(.numberPad)
                 
-            }else if isBirtDate {
-                
-                
             }else {
                 
                 TextField(nameField, text: $valueField)
@@ -151,8 +172,6 @@ struct FormTextFfield: View {
                 
             }
         }
-        .padding(.horizontal)
-        .padding(.vertical, 5)
     }
 }
 

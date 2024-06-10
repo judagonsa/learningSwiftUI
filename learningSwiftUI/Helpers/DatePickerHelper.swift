@@ -15,12 +15,6 @@ struct DatePickerHelper: UIViewRepresentable {
     
     @Binding public var date: Date?
     
-    private let dateFormatted: DateFormatter = {
-        let dateFormatted = DateFormatter()
-        dateFormatted.dateFormat = "yyyy/MM/dd"
-        return dateFormatted
-    }()
-    
     func makeUIView(context: Context) -> UITextField {
         self.datePicker.datePickerMode = .date
         self.datePicker.preferredDatePickerStyle = .wheels
@@ -45,7 +39,7 @@ struct DatePickerHelper: UIViewRepresentable {
     
     func updateUIView(_ uiView: UITextField, context: Context) { 
         if let selectedDate = date {
-            uiView.text = dateFormatted.string(from: selectedDate)
+            uiView.text = selectedDate.formatted(date: .long, time: .omitted)
         }
     }
     
