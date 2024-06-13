@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		91321BA72BF5AC71000FEA3F /* TabItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91321BA62BF5AC71000FEA3F /* TabItem.swift */; };
 		914BEAB32C17A5C800C8A8E8 /* AnumsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 914BEAB22C17A5C800C8A8E8 /* AnumsApp.swift */; };
+		917704B72C1A77720082C841 /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 917704B62C1A77720082C841 /* ProfileViewModel.swift */; };
 		917724D32BF9734A008BBE8B /* TextHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 917724D22BF9734A008BBE8B /* TextHelper.swift */; };
 		917724D52BF97598008BBE8B /* ButtonHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 917724D42BF97598008BBE8B /* ButtonHelper.swift */; };
 		91BC02732BF585AD00C2AA4D /* learningSwiftUIApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91BC02722BF585AD00C2AA4D /* learningSwiftUIApp.swift */; };
@@ -50,6 +51,7 @@
 /* Begin PBXFileReference section */
 		91321BA62BF5AC71000FEA3F /* TabItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabItem.swift; sourceTree = "<group>"; };
 		914BEAB22C17A5C800C8A8E8 /* AnumsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnumsApp.swift; sourceTree = "<group>"; };
+		917704B62C1A77720082C841 /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
 		917724D22BF9734A008BBE8B /* TextHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextHelper.swift; sourceTree = "<group>"; };
 		917724D42BF97598008BBE8B /* ButtonHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonHelper.swift; sourceTree = "<group>"; };
 		91BC026F2BF585AD00C2AA4D /* learningSwiftUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = learningSwiftUI.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -233,17 +235,10 @@
 		91F288F32BF659FE00EF74B2 /* ProfileView */ = {
 			isa = PBXGroup;
 			children = (
-				91F288F42BF65A0C00EF74B2 /* View */,
+				91F288F52BF65A6000EF74B2 /* ProfileView.swift */,
+				917704B62C1A77720082C841 /* ProfileViewModel.swift */,
 			);
 			path = ProfileView;
-			sourceTree = "<group>";
-		};
-		91F288F42BF65A0C00EF74B2 /* View */ = {
-			isa = PBXGroup;
-			children = (
-				91F288F52BF65A6000EF74B2 /* ProfileView.swift */,
-			);
-			path = View;
 			sourceTree = "<group>";
 		};
 		91F288F72BF65B4700EF74B2 /* Helpers */ = {
@@ -404,6 +399,7 @@
 				917724D52BF97598008BBE8B /* ButtonHelper.swift in Sources */,
 				91BC02A22BF5860C00C2AA4D /* CustomTabBar.swift in Sources */,
 				91BC02AD2BF5861E00C2AA4D /* Tab.swift in Sources */,
+				917704B72C1A77720082C841 /* ProfileViewModel.swift in Sources */,
 				91BC02732BF585AD00C2AA4D /* learningSwiftUIApp.swift in Sources */,
 				91F288F92BF65B5F00EF74B2 /* TextfieldHelper.swift in Sources */,
 				91BC02AC2BF5861E00C2AA4D /* AppData.swift in Sources */,
