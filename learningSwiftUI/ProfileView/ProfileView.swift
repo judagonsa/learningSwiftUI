@@ -29,7 +29,7 @@ struct ProfileView: View {
                 }
                 
                 FormTextFfield(nameField: "Correo", valueField: $viewModel.email, isEmail: true)
-                if !viewModel.isValidNEmail {
+                if !viewModel.isValidEmail {
                     RequirementText(iconName: "mail.fill", requirementText: "Mínimo 6 caracteres, una mayúscula y un número")
                 }
                 
@@ -82,12 +82,14 @@ struct ProfileView: View {
                     RequirementText(iconName: "filemenu.and.selection", requirementText: "Debes seleccionar el género")
                 }
                 
-                //vista de cambiar contraseña
-                
-                
                 Spacer()
                 Button {
-                    
+                    if viewModel.validationField() {
+                        //TODO: guardar información en teléfono
+                        print("guardar información")
+                    }else {
+                        viewModel.isRealTime = true
+                    }
                 } label: {
                     Text("Guardar")
                 }
@@ -96,21 +98,6 @@ struct ProfileView: View {
             }
         }
     }
-    //TODO: pasar a en tiempo real
-    //    func validateInformation() -> Bool {
-    //        var isValidateInformation =  false
-    //
-    //        isValidName = name.count > 3
-    //        isValidLastName = lastName.count > 3
-    //        //TODO: validar correo (video tutorial)
-    //        //TODO: tipo de documento
-    //        //TODO: fecha de nacimiento mayor a 12 años
-    //        isValidNumberDocument = numberDocument.count > 9
-    //        isValidNumberPhone = numberPhone.count == 10
-    //        //TODO: seleccionar género
-    //
-    //        return false
-    //    }
 }
 
 #Preview {
