@@ -122,4 +122,14 @@ class ProfileViewModel: ObservableObject {
         
         return isValidName && isValidLastName && isValidEmail && isValidTypeDocument && isValidNumberDocument && isValidBirthDate && isValidNumberPhone && isValidGender
     }
+    
+    func saveProfile(profile: ProfileModel) {
+        
+    }
+    
+    func loadProfile() -> ProfileModel? {
+        
+        
+        return nil
+    }
 }

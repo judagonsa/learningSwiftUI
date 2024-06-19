@@ -27,6 +27,7 @@
 		91BC02AF2BF5861E00C2AA4D /* netflixSplash.json in Resources */ = {isa = PBXBuildFile; fileRef = 91BC02A92BF5861E00C2AA4D /* netflixSplash.json */; };
 		91BC02B22BF5863D00C2AA4D /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = 91BC02B12BF5863D00C2AA4D /* Lottie */; };
 		91EA2E592C164A00001FA46B /* DatePickerHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91EA2E582C164A00001FA46B /* DatePickerHelper.swift */; };
+		91ED2C392C22749C00288127 /* ProfileModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91ED2C382C22749C00288127 /* ProfileModel.swift */; };
 		91F288F62BF65A6000EF74B2 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91F288F52BF65A6000EF74B2 /* ProfileView.swift */; };
 		91F288F92BF65B5F00EF74B2 /* TextfieldHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91F288F82BF65B5F00EF74B2 /* TextfieldHelper.swift */; };
 /* End PBXBuildFile section */
@@ -72,6 +73,7 @@
 		91BC02A72BF5861E00C2AA4D /* SplashScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SplashScreen.swift; sourceTree = "<group>"; };
 		91BC02A92BF5861E00C2AA4D /* netflixSplash.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = netflixSplash.json; sourceTree = "<group>"; };
 		91EA2E582C164A00001FA46B /* DatePickerHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatePickerHelper.swift; sourceTree = "<group>"; };
+		91ED2C382C22749C00288127 /* ProfileModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileModel.swift; sourceTree = "<group>"; };
 		91F288F52BF65A6000EF74B2 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		91F288F82BF65B5F00EF74B2 /* TextfieldHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextfieldHelper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -237,6 +239,7 @@
 			children = (
 				91F288F52BF65A6000EF74B2 /* ProfileView.swift */,
 				917704B62C1A77720082C841 /* ProfileViewModel.swift */,
+				91ED2C382C22749C00288127 /* ProfileModel.swift */,
 			);
 			path = ProfileView;
 			sourceTree = "<group>";
@@ -405,6 +408,7 @@
 				91BC02AC2BF5861E00C2AA4D /* AppData.swift in Sources */,
 				914BEAB32C17A5C800C8A8E8 /* AnumsApp.swift in Sources */,
 				91321BA72BF5AC71000FEA3F /* TabItem.swift in Sources */,
+				91ED2C392C22749C00288127 /* ProfileModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

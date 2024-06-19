@@ -85,8 +85,19 @@ struct ProfileView: View {
                 Spacer()
                 Button {
                     if viewModel.validationField() {
+                        ProfileModel(
+                            name: viewModel.name,
+                            lastName: viewModel.lastName,
+                            email: viewModel.email,
+                            typeDocument: viewModel.typeDocumentEnum!,
+                            numberDocument: viewModel.numberPhone,
+                            bithDate: viewModel.birthDate!,
+                            numberPhone: viewModel.numberPhone,
+                            gender: viewModel.typeGenderEnum!
+                        )
+                        
                         //TODO: guardar información en teléfono
-                        print("guardar información")
+                        
                     }else {
                         viewModel.isRealTime = true
                     }
@@ -96,6 +107,9 @@ struct ProfileView: View {
                 .buttonFooter(color: Color("primaryRed"))
                 
             }
+        }
+        .onAppear {
+            //TODO: validar si existe información para mostrar
         }
     }
 }
