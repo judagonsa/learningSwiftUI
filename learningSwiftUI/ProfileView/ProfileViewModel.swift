@@ -38,6 +38,8 @@ class ProfileViewModel: ObservableObject {
     @Published var isRealTime = false
     var cancellableSet: Set<AnyCancellable> = []
     
+    var userDefaultHelper = UserDefaultHelper()
+    
     init() {
         $name
             .receive(on: RunLoop.main)
@@ -124,12 +126,10 @@ class ProfileViewModel: ObservableObject {
     }
     
     func saveProfile(profile: ProfileModel) {
-        
+        userDefaultHelper.saveProfile(profile: profile)
     }
     
     func loadProfile() -> ProfileModel? {
-        
-        
-        return nil
+        return userDefaultHelper.getProfile()
     }
 }

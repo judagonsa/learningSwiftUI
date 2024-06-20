@@ -12,6 +12,7 @@
 		917704B72C1A77720082C841 /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 917704B62C1A77720082C841 /* ProfileViewModel.swift */; };
 		917724D32BF9734A008BBE8B /* TextHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 917724D22BF9734A008BBE8B /* TextHelper.swift */; };
 		917724D52BF97598008BBE8B /* ButtonHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 917724D42BF97598008BBE8B /* ButtonHelper.swift */; };
+		918FDD5F2C23AE69001F6AA6 /* UserDefaultHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 918FDD5E2C23AE69001F6AA6 /* UserDefaultHelper.swift */; };
 		91BC02732BF585AD00C2AA4D /* learningSwiftUIApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91BC02722BF585AD00C2AA4D /* learningSwiftUIApp.swift */; };
 		91BC02752BF585AD00C2AA4D /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91BC02742BF585AD00C2AA4D /* ContentView.swift */; };
 		91BC02772BF585AE00C2AA4D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 91BC02762BF585AE00C2AA4D /* Assets.xcassets */; };
@@ -55,6 +56,7 @@
 		917704B62C1A77720082C841 /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
 		917724D22BF9734A008BBE8B /* TextHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextHelper.swift; sourceTree = "<group>"; };
 		917724D42BF97598008BBE8B /* ButtonHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonHelper.swift; sourceTree = "<group>"; };
+		918FDD5E2C23AE69001F6AA6 /* UserDefaultHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultHelper.swift; sourceTree = "<group>"; };
 		91BC026F2BF585AD00C2AA4D /* learningSwiftUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = learningSwiftUI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		91BC02722BF585AD00C2AA4D /* learningSwiftUIApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = learningSwiftUIApp.swift; sourceTree = "<group>"; };
 		91BC02742BF585AD00C2AA4D /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -237,9 +239,9 @@
 		91F288F32BF659FE00EF74B2 /* ProfileView */ = {
 			isa = PBXGroup;
 			children = (
-				91F288F52BF65A6000EF74B2 /* ProfileView.swift */,
-				917704B62C1A77720082C841 /* ProfileViewModel.swift */,
 				91ED2C382C22749C00288127 /* ProfileModel.swift */,
+				917704B62C1A77720082C841 /* ProfileViewModel.swift */,
+				91F288F52BF65A6000EF74B2 /* ProfileView.swift */,
 			);
 			path = ProfileView;
 			sourceTree = "<group>";
@@ -252,6 +254,7 @@
 				917724D42BF97598008BBE8B /* ButtonHelper.swift */,
 				91EA2E582C164A00001FA46B /* DatePickerHelper.swift */,
 				914BEAB22C17A5C800C8A8E8 /* AnumsApp.swift */,
+				918FDD5E2C23AE69001F6AA6 /* UserDefaultHelper.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -401,6 +404,7 @@
 				91BC02AE2BF5861E00C2AA4D /* SplashScreen.swift in Sources */,
 				917724D52BF97598008BBE8B /* ButtonHelper.swift in Sources */,
 				91BC02A22BF5860C00C2AA4D /* CustomTabBar.swift in Sources */,
+				918FDD5F2C23AE69001F6AA6 /* UserDefaultHelper.swift in Sources */,
 				91BC02AD2BF5861E00C2AA4D /* Tab.swift in Sources */,
 				917704B72C1A77720082C841 /* ProfileViewModel.swift in Sources */,
 				91BC02732BF585AD00C2AA4D /* learningSwiftUIApp.swift in Sources */,

@@ -7,7 +7,7 @@
 
 import Foundation
 
-enum TypeDocument: CaseIterable, Identifiable {
+enum TypeDocument: CaseIterable, Identifiable, Codable {
     var id: Self { self }
     
     case dni, document, passport
@@ -21,7 +21,7 @@ enum TypeDocument: CaseIterable, Identifiable {
     }
 }
 
-enum TypeGender: CaseIterable, Identifiable {
+enum TypeGender: CaseIterable, Identifiable, Codable {
     var id: Self { self }
     
     case female, male, other

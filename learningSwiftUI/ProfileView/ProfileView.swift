@@ -85,18 +85,18 @@ struct ProfileView: View {
                 Spacer()
                 Button {
                     if viewModel.validationField() {
-                        ProfileModel(
+                        let profile = ProfileModel(
                             name: viewModel.name,
                             lastName: viewModel.lastName,
                             email: viewModel.email,
                             typeDocument: viewModel.typeDocumentEnum!,
                             numberDocument: viewModel.numberPhone,
-                            bithDate: viewModel.birthDate!,
+                            birthDate: viewModel.birthDate!,
                             numberPhone: viewModel.numberPhone,
                             gender: viewModel.typeGenderEnum!
                         )
                         
-                        //TODO: guardar información en teléfono
+                        viewModel.saveProfile(profile: profile)
                         
                     }else {
                         viewModel.isRealTime = true
@@ -109,7 +109,18 @@ struct ProfileView: View {
             }
         }
         .onAppear {
-            //TODO: validar si existe información para mostrar
+            if let profile = viewModel.loadProfile() {
+                viewModel.name = profile.name
+                viewModel.lastName = profile.lastName
+                viewModel.email = profile.email
+                viewModel.typeDocument = profile.typeDocument.name
+                viewModel.typeDocumentEnum = profile.typeDocument
+                viewModel.numberDocument = profile.numberDocument
+                viewModel.birthDate = profile.birthDate
+                viewModel.numberPhone = profile.numberPhone
+                viewModel.typeGender = profile.gender.name
+                viewModel.typeGenderEnum = profile.gender
+            }
         }
     }
 }
