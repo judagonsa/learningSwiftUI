@@ -30,7 +30,7 @@ struct ProfileView: View {
                 
                 FormTextFfield(nameField: "Correo", valueField: $viewModel.email, isEmail: true)
                 if !viewModel.isValidEmail {
-                    RequirementText(iconName: "mail.fill", requirementText: "Mínimo 6 caracteres, una mayúscula y un número")
+                    RequirementText(iconName: "mail.fill", requirementText: "Favor ingrese un correo válido")
                 }
                 
                 Menu {

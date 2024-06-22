@@ -57,11 +57,10 @@ class ProfileViewModel: ObservableObject {
             .assign(to: \.isValidLastName, on: self)
             .store(in: &cancellableSet)
         
-        //TODO: agregar regex para verificar el correo valido
         $email
             .receive(on: RunLoop.main)
             .map { email in
-                return self.isRealTime ? email.count > 3 : true
+                return self.isRealTime ? email.isEmpty ? false : self.validateEmiil(email: email) : true
             }
             .assign(to: \.isValidEmail, on: self)
             .store(in: &cancellableSet)
@@ -114,8 +113,7 @@ class ProfileViewModel: ObservableObject {
     func validationField() -> Bool {
         isValidName = name.count > 3
         isValidLastName = lastName.count > 3
-        //TODO: validación email (función)
-        isValidEmail = email.count > 3
+        isValidEmail = validateEmiil(email: email)
         isValidTypeDocument = !typeDocument.isEmpty
         isValidNumberDocument = numberDocument.count == 10
         isValidBirthDate = birthDate != nil
@@ -131,5 +129,10 @@ class ProfileViewModel: ObservableObject {
     
     func loadProfile() -> ProfileModel? {
         return userDefaultHelper.getProfile()
+    }
+    
+    func validateEmiil(email: String) -> Bool {
+        let pattern = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}"
+        return NSPredicate(format: "SELF MATCHES %@", pattern).evaluate(with: email)
     }
 }

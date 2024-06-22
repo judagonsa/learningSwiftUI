@@ -53,6 +53,7 @@ struct FormTextFfield: View {
                 TextField(nameField, text: $valueField)
                     .textFormulary()
                     .keyboardType(.emailAddress)
+                    .textInputAutocapitalization(.never)
                 
             }else if isNumber{
                 
