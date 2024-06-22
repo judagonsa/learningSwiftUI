@@ -85,7 +85,7 @@ class ProfileViewModel: ObservableObject {
         $birthDate
             .receive(on: RunLoop.main)
             .map { birthDate in
-                return self.isRealTime ? birthDate != nil : true
+                return self.isRealTime ? birthDate == nil ? false : self.isLegalAge(birtDate: birthDate!) : true
             }
             .assign(to: \.isValidBirthDate, on: self)
             .store(in: &cancellableSet)
@@ -116,7 +116,7 @@ class ProfileViewModel: ObservableObject {
         isValidEmail = validateEmiil(email: email)
         isValidTypeDocument = !typeDocument.isEmpty
         isValidNumberDocument = numberDocument.count == 10
-        isValidBirthDate = birthDate != nil
+        isValidBirthDate = birthDate == nil ? false : isLegalAge(birtDate: birthDate!)
         isValidNumberPhone = numberPhone.count == 10
         isValidGender = !typeGender.isEmpty
         
@@ -134,5 +134,10 @@ class ProfileViewModel: ObservableObject {
     func validateEmiil(email: String) -> Bool {
         let pattern = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}"
         return NSPredicate(format: "SELF MATCHES %@", pattern).evaluate(with: email)
+    }
+    
+    func isLegalAge(birtDate: Date) -> Bool {
+        let years = Calendar.current.dateComponents([.year, .month, .day], from: birtDate, to: Date())
+        return years.year! > 10
     }
 }
