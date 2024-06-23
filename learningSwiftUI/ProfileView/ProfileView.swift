@@ -9,14 +9,31 @@ import SwiftUI
 
 struct ProfileView: View {
     
+    @Environment(\.presentationMode) var presentationMode
     @ObservedObject var viewModel = ProfileViewModel()
     
     var body: some View {
         ScrollView {
             VStack {
                 
-                Text("Perfil")
-                    .titleView()
+                ZStack {
+                    HStack {
+                        Text("Perfil")
+                            .titleView()
+                    }
+                    
+                    HStack {
+                        Button {
+                            presentationMode.wrappedValue.dismiss()
+                        }label: {
+                            Image(systemName: "chevron.backward")
+                                .foregroundStyle(.black)
+                        }
+                        .padding(.leading)
+                        Spacer()
+                    }
+                }
+                
                 
                 FormTextFfield(nameField: "Nombre", valueField: $viewModel.name)
                 if !viewModel.isValidName {
@@ -107,6 +124,18 @@ struct ProfileView: View {
                 .buttonFooter(color: Color("primaryRed"))
                 
             }
+            .navigationBarBackButtonHidden(true)
+            .toolbar {
+                ToolbarItem(placement: .topBarLeading) {
+                    Button {
+                        presentationMode.wrappedValue.dismiss()
+                    }label: {
+                        Image(systemName: "chevron.backward")
+                            .foregroundStyle(.black)
+                    }
+                }
+            }
+            
         }
         .onAppear {
             if let profile = viewModel.loadProfile() {

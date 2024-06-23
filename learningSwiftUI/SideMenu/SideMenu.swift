@@ -10,6 +10,7 @@ import SwiftUI
 struct SideMenu: View {
     
     @Binding var showMenu: Bool
+    @State var showProfile = false
     
     var body: some View {
         VStack(alignment: .leading) {
@@ -45,8 +46,18 @@ struct SideMenu: View {
             ScrollView(.vertical, showsIndicators: false) {
                 VStack {
                     VStack (alignment: .leading, spacing: 40) {
-                        TabButton(icon: "person.crop.circle", title: "Perfil")
-                        TabButton(icon: "gearshape.fill", title: "Configuración")
+                        TabButton(icon: "person.crop.circle", title: "Perfil") {
+                            if showMenu {
+                                withAnimation {
+                                    showMenu.toggle()
+                                    showProfile.toggle()
+                                }
+                            }
+                        }
+                        
+                        TabButton(icon: "gearshape.fill", title: "Configuración") {
+                            
+                        }
                         
                     }
                     .padding()
@@ -55,15 +66,28 @@ struct SideMenu: View {
                     
                     Divider()
                     
-                    TabButton(icon: "info.circle", title: "Acerca de")
-                        .padding()
-                        .padding(.leading)
+                    NavigationLink {
+                        
+                        
+                        
+                        
+                    } label: {
+                        TabButton(icon: "info.circle", title: "Acerca de") {
+                            
+                        }
+                    }
+                    .padding()
+                    .padding(.leading)
                     
                     Divider()
                     
                     VStack (alignment: .leading, spacing: 40) {
-                        TabButton(icon: "person.crop.circle", title: "Política y privacidad")
-                        TabButton(icon: "lock.shield", title: "Tratamiendo de datos")
+                        TabButton(icon: "person.crop.circle", title: "Política y privacidad"){
+                            
+                        }
+                        TabButton(icon: "lock.shield", title: "Tratamiendo de datos"){
+                            
+                        }
                         
                     }
                     .padding()
@@ -71,9 +95,11 @@ struct SideMenu: View {
                     
                     Divider()
                     
-                    TabButton(icon: "questionmark.circle", title: "Centro de ayuda")
-                        .padding()
-                        .padding(.leading)
+                    TabButton(icon: "questionmark.circle", title: "Centro de ayuda"){
+                        
+                    }
+                    .padding()
+                    .padding(.leading)
                 }
                 
             }
@@ -99,15 +125,15 @@ struct SideMenu: View {
                 .ignoresSafeArea(.container, edges: .vertical)
         )
         .frame(maxWidth: .infinity, alignment: .leading)
-        
+        .fullScreenCover(isPresented: $showProfile, content: { ProfileView() })
     }
     
     
     @ViewBuilder
-    func TabButton(icon: String, title: String) -> some View {
+    func TabButton(icon: String, title: String, completion: @escaping () -> ()) -> some View {
         Button {
-            
-        } label: {
+            completion()
+        }label: {
             HStack(spacing: 15) {
                 Image(systemName: icon)
                     .resizable()
