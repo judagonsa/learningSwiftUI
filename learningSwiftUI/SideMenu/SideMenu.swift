@@ -36,6 +36,7 @@ struct SideMenu: View {
                     showMenu.toggle()
                 } label: {
                     Image(systemName: "xmark")
+                        .foregroundStyle(.black)
                 }
             }
             .padding(.horizontal)
@@ -62,7 +63,7 @@ struct SideMenu: View {
                     
                     VStack (alignment: .leading, spacing: 40) {
                         TabButton(icon: "person.crop.circle", title: "Política y privacidad")
-                        TabButton(icon: "gearshape.fill", title: "Tratamiendo de datos")
+                        TabButton(icon: "lock.shield", title: "Tratamiendo de datos")
                         
                     }
                     .padding()
