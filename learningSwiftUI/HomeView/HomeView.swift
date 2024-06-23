@@ -8,7 +8,9 @@
 import SwiftUI
 
 struct HomeView: View {
+    
     @Binding var showMenu: Bool
+    
     var body: some View {
         VStack { 
             Button("Show Menu") {

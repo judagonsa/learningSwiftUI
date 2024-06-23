@@ -11,6 +11,7 @@ struct ProfileView: View {
     
     @Environment(\.presentationMode) var presentationMode
     @ObservedObject var viewModel = ProfileViewModel()
+    @EnvironmentObject var homeViewModel: MainMenuViewModel
     
     var body: some View {
         ScrollView {
@@ -138,7 +139,7 @@ struct ProfileView: View {
             
         }
         .onAppear {
-            if let profile = viewModel.loadProfile() {
+            if let profile = homeViewModel.loadProfile() {
                 viewModel.name = profile.name
                 viewModel.lastName = profile.lastName
                 viewModel.email = profile.email
@@ -154,6 +155,3 @@ struct ProfileView: View {
     }
 }
 
-#Preview {
-    ProfileView()
-}

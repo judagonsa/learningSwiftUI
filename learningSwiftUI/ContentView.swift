@@ -8,10 +8,14 @@
 import SwiftUI
 
 struct ContentView: View {
+    
+    
+    
     var appData: AppData = .init()
+    
     var body: some View {
         ZStack {
-            TabMenuView()
+            MainMenuView()
                 .environment(AppData())
             
             if !appData.isSplashFinish {

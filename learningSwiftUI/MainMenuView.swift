@@ -7,9 +7,9 @@
 
 import SwiftUI
 
-struct TabMenuView: View {
+struct MainMenuView: View {
     
-    @Environment(AppData.self) private var appData
+    @StateObject var viewModel = MainMenuViewModel()
     @Bindable var appDataBindable: AppData = .init()
     
     @State var showSideMenu = false
@@ -64,12 +64,12 @@ struct TabMenuView: View {
                 lastStoredOffset = 0
             }
         }
+        .environmentObject(viewModel)
     }
 }
 
 #Preview {
-    TabMenuView()
-        .environment(AppData())
+    MainMenuView()
 }
 
 //
