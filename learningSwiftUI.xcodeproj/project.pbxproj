@@ -159,8 +159,7 @@
 				9160B4F12C2774EF00807C5B /* SideMenu */,
 				91BC02A12BF5860C00C2AA4D /* TabMenuView */,
 				91F288F32BF659FE00EF74B2 /* ProfileView */,
-				91DBB1F22C28A8D6007DDC02 /* HomeViewModel.swift */,
-				91BC029E2BF5860C00C2AA4D /* MainMenuView.swift */,
+				91DBB1F42C28C126007DDC02 /* MainMenu */,
 				91BC02742BF585AD00C2AA4D /* ContentView.swift */,
 				91BC02722BF585AD00C2AA4D /* learningSwiftUIApp.swift */,
 				91BC02762BF585AE00C2AA4D /* Assets.xcassets */,
@@ -235,6 +234,15 @@
 				91BC02AA2BF5861E00C2AA4D /* Logos */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		91DBB1F42C28C126007DDC02 /* MainMenu */ = {
+			isa = PBXGroup;
+			children = (
+				91DBB1F22C28A8D6007DDC02 /* HomeViewModel.swift */,
+				91BC029E2BF5860C00C2AA4D /* MainMenuView.swift */,
+			);
+			path = MainMenu;
 			sourceTree = "<group>";
 		};
 		91F288F32BF659FE00EF74B2 /* ProfileView */ = {
