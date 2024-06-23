@@ -11,8 +11,7 @@ struct ContentView: View {
     var appData: AppData = .init()
     var body: some View {
         ZStack {
-            
-            HomeView()
+            TabMenuView()
                 .environment(AppData())
             
             if !appData.isSplashFinish {

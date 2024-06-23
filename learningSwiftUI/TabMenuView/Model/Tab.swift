@@ -10,7 +10,7 @@ import SwiftUI
 enum Tab: String, CaseIterable {
     case home = "Home"
     case new = "New & Hot"
-    case profile = "My Netflix"
+    case profile = "My Perfil"
     
     var icon: String {
         switch self {

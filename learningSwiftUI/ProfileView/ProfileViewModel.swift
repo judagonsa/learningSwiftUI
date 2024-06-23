@@ -81,7 +81,6 @@ class ProfileViewModel: ObservableObject {
             .assign(to: \.isValidNumberDocument, on: self)
             .store(in: &cancellableSet)
         
-        //TODO: validar fecha, mayor de 18 años
         $birthDate
             .receive(on: RunLoop.main)
             .map { birthDate in
